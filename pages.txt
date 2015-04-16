@@ -1,6 +1,2 @@
-http://cc2e.com/
-http://testa.roberta.free.fr/My%20Books/Computer%20programming/Java/Code%20Complete%20%20Second%20Edition%20By%20Steve%20Mcconnell%20(Microsoft%20Press%202004).pdf
-http://algs4.cs.princeton.edu/home/
-https://www.realvnc.com/
-shell-storm.org/shellcode/
 Network-Level Polymorphic Shellcode Detection Using Emulation
+http://www.ics.forth.gr/dcs/Activities/papers/emulation.virology.springer.pdf
