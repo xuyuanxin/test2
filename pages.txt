@@ -1,2 +1,67 @@
-Network-Level Polymorphic Shellcode Detection Using Emulation
-http://www.ics.forth.gr/dcs/Activities/papers/emulation.virology.springer.pdf
+
+
+
+http://www.linuxidc.com/Linux/2012-04/58839.htm
+http://linux.it.net.cn/e/distro/SuSE/2014/1128/9089.html
+
+
+
+
+
+
+http://blog.chinaunix.net/uid-22976768-id-1640924.html
+----> linux svn 
+svn checkout path //  
+svn co path // 简写
+
+
+
+
+
+
+
+.....................................................................................
+6.1  Zypper
+https://www.suse.com/zh-cn/documentation/sles11/book_sle_admin/data/sec_zypper.html
+
+----> 用Zypper安装和删除软件
+zypper install package_name  // 安装软件
+zypper remove package_name   // 卸载某个软件包
+
+
+----> 用Zypper管理安装源
+zypper repos    // 列出系统已知的所有安装源
+
+zypper repos -d // 列出配置的软件源，显示详情（优先级、网址等等）：
+
+zypper addrepo (ar) [options] <URI> <alias>  // 添加安装源
+
+zypper removerepo (rr) [options] <alias|#|URI>
+
+
+
+要查询特定包的所有安装源，请使用 search。它用于包名称或（可选）包摘要和描述。搜索项中
+允许使用通配符 * 和 ?。默认情况下搜索不区分大小写。
+zypper search vsftpd 
+
+
+
+
+
+升级某个软件包
+zypper update package_name
+
+mkdir /mnt/iso
+mount -o loop /data/suse11sp1/64-GM-DVD1.iso /mnt/iso #isomount
+zypper addrepo /mnt/iso/ suse11sp1iso
+
+zypper repos
+# | Alias            | Name            | Enabled | Refresh
+--+------------------+-----------------+---------+--------
+2 | suse11sp1iso     | suse11sp1iso    | Yes     | No
+
+zypper install mysql 2
+service mysql status
+service mysql start
+chkconfig mysql on
+
