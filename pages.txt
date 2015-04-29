@@ -1,1 +1,73 @@
 
+前向声明
+函数声明
+warning: ‘struct xxx’ declared inside parameter list
+warning: its scope is only this definition or declaration, which is probably not what you want
+
+http://bbs.pediy.com/showthread.php?t=84369   intel手册2翻译
+http://www.docin.com/p-515073739.html         intel手册2翻译
+
+http://www.tuicool.com/articles/Q3q2Mv
+ranlib
+---->
+CMPS/CMPSB/CMPSW/CMPSD/CMPSQ—Compare String Operands
+Compares the byte, word, doubleword, or quadword specified with the first source ope-
+rand with the byte, word, doubleword, or quadword specified with the second source o-
+perand and sets the status flags in the EFLAGS register according to the results.
+Both source operands are located in memory. The address of the first source operand -
+is read from DS:SI, DS:ESI or RSI (depending on the address-size attribute of the in-
+struction is 16, 32, or 64, respectively). The address of the second source operand -
+is read from ES:DI, ES:EDI or RDI (again depending on the address-size attribute of -
+the instruction is 16, 32, or 64). The DS segment may be overridden with a segment o-
+verride prefix, but the ES segment cannot be overridden.
+
+----> cifs
+cifs: Common Internet File System                                                    |
+中文名  通用网络文件系统
+外文名  Common Internet File System
+作  用  用于网络设备间文件共享
+提出者  微软公司
+CIFS 是一个新提出的协议, 它使程序可以访问远程Internet计算机上的文件并要求此计算机提供|
+服务. CIFS使用客户/服务器模式. 客户程序请求远在服务器上的服务器程序为它提供服务. 服务|
+器获得请求并返回响应. CIFS是公共的或开放的SMB协议版本, 并由Microsoft使用. SMB协议在局|
+域网上用于服务器文件访问和打印的协议. 像SMB协议一样, CIFS在高层运行, 而不像TCP/IP协议|
+那样运行在底层. CIFS可以看做是应用程序协议如文件传输协议和超文本传输协议的一个实现.  |
+
+
+-------------------------------------------------------------------------------------
+http://www.jb51.net/os/RedHat/1109.html
+
+mount [-t vfstype] [-o options] device dir
+1 -t vfstype 指定文件系统的类型，通常不必指定。mount 会自动选择正确的类型。常用类型有：
+光盘或光盘镜像           ：iso9660
+DOS fat16文件系统        ：msdos
+Windows 9x fat32文件系统 ：vfat
+Windows NT ntfs文件系统  ：ntfs
+Mount Windows文件网络共享：smbfs
+UNIX(LINUX) 文件网络共享 ：nfs
+2 -o options 主要用来描述设备或档案的挂接方式。常用的参数有：
+loop      ：用来把一个文件当成硬盘分区挂接上系统
+ro        ：采用只读方式挂接设备
+rw        ：采用读写方式挂接设备
+iocharset ：指定访问文件系统所用字符集
+3 device 要挂接(mount)的设备。
+4 dir设备在系统上的挂接点(mount point)。
+
+1 list mounted filesystems
+mount
+
+2 光盘镜像文件的挂接(mount)
+#mkdir /mnt/vcdrom  # 创建一个目录用作挂接点(mount point)
+#mount -o loop -t iso9660 /home/sunky/mydisk.iso /mnt/vcdrom
+# 使用目录/mnt/vcdrom，即可访问盘镜像文件mydisk.iso中的所有文件。
+                                                                                     |
+3 挂接Windows文件共享                                                                |
+Windows网络共享的核心是SMB/CIFS, 在linux下要挂接(mount)windows的磁盘共享, 就必须安装 |
+和使用samba软件包. 现在流行的linux发行版绝大多数已经包含了samba软件包, 如果安装linux |
+系统时未安装samba请首先安装samba. 当然也可以到 www.samba.org网站下载......新的版本是 |
+3.0.10版. 当windows系统共享设置好以后, 就可以在linux客户端挂接(mount)了, 具体操作如下|
+# mkdir –p /mnt/samba   //建立一个目录用来作挂接点(mount point) 
+# mount -t smbfs -o username=admin,password=pldy123 //10.140.133.23/c$ /mnt/samba    |
+admin和pldy123是ip地址为10.140.133.23 windows计算机的一个用户名和密码, c$是这台计算机|
+的一个磁盘共享, 如此就可以在linux系统上通过/mnt/samba来访问windows系统磁盘上的文件了.| 
+
